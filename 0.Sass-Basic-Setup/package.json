@@ -1,0 +1,16 @@
+{
+  "name": "0.sass-basic-setup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass:compile": "node_modules/.bin/sass --watch scss/style.scss:css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.71.0",
+    "scss": "^0.2.4"
+  }
+}
