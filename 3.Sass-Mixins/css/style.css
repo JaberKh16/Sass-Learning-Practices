@@ -1,0 +1,46 @@
+h2 {
+  color: blue;
+  padding: 2px;
+  margin: 4px;
+  text-decoration: underline;
+  font-weight: 200;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-primary {
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  /* include the mixin */
+  margin: 10px;
+  color: #ffffff;
+  background-color: blue;
+  padding: 12px 15px;
+}
+
+.btn-success {
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  /* include the mixin */
+  margin: 10px;
+  color: #ffffff;
+  background-color: green;
+  padding: 12px 15px;
+}
+
+.btn-dark {
+  /* include the mixin */
+  margin: 10px;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 12px 15px;
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+/*# sourceMappingURL=style.css.map */

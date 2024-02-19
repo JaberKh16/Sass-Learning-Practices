@@ -1,0 +1,55 @@
+$color: #ffffff;
+$background-color: blue;
+
+// h2 style
+h2 {
+  color: blue;
+  padding: 2px;
+  margin: 4px;
+  text-decoration: underline;
+  font-weight: 200;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// define mixin
+@mixin btn-primary {
+  margin: 10px;
+  color: $color;
+  background-color: $background-color;
+  padding: 12px 15px;
+}
+
+// define mixin
+@mixin btn-success($default-color: #000000) {
+  margin: 10px;
+  color: $color;
+  background-color: $default-color;
+  padding: 12px 15px;
+}
+
+.btn-primary {
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  /* include the mixin */
+  @include btn-primary();
+}
+
+.btn-success {
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  /* include the mixin */
+  @include btn-success(green);
+}
+
+.btn-dark {
+  /* include the mixin */
+  @include btn-success();
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
