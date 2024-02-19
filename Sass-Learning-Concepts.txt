@@ -1,0 +1,134 @@
+Sass Learning Concepts Materials
+===============================
+Definition: 
+Sass is a CSS preprocessor that helps you manage tasks in large projects where the style sheets get larger, 
+you have a number of lines of CSS code, and it becomes difficult to maintain your CSS codes.
+
+Supported Features :
+a. Reusuable CSS - Mixins and Function feature
+b. Less CSS 
+c. Conditional CSS
+d. Variable Supported CSS
+e. Custom CSS
+f. Multiple Files CSS - Modularization
+
+Advantages Of Sass:
+a. compass with lots of useful tools and functions - sprites, mixins and vendor prefixes
+b. easier to understand - syntax is similar like PHP
+c. has more advantages than LESS
+d. can do mathematical operation on any units (mixing of units supports)
+
+Disadvantages Of Sass:
+a. requires Runy in otder to run
+
+
+Difference between Sass and Less:
+Less Library:
+a. easier logs to understand
+b. provides mathematical operation on single units 
+c. has namespaces which adds another layer to organization
+d. can be invoked with .js file - though it makes it slower
+
+
+Sass Installation & Compilation Guide
+-------------------------------------
+
+a. Installation:
+    $ npm install scss  // install via node
+    
+
+b. Compliation:
+    - Sass code need to comile thus browser only knows css cnpode.
+    - Sass compiled code supports in all browser after compilaton regardless of version issue
+    - to comile Sass code:
+        a) Sass Code Compile Command:
+            $ sass --watch style.scss style.css    
+        b) Using Extension: VSCode Extension- Live Sass Compiler(Ritwick Dey)
+        c) Using script setup in package.json:
+            // if sass installed globally
+            "scripts": {
+                "sass:compile": "sass --watch scss/style.scss:css/style.css"
+            },
+            // if sass installed locally 
+            "scripts": {
+                "sass:compile": "node_modules/.bin/sass --watch scss/style.scss:css/style.css"
+            }
+c. Partials:
+    - a sass file with a leading underscore(_) is partials, tells sass not to compile its a partials  
+    Syntax: 
+        _filename.scss
+    Example:
+        1) _variables.scss  --> contain variables
+        2) _mixins.scss     --> contains functions
+        3) _card.scss       --> contains card styles
+    
+    Partials can be used with @use rule.
+    Syntax:
+        @use 'variable';      // using '_variables.scss' partials
+    Example:
+        // _base.scss
+        $font-stack: Helvetica, sans-serif;
+        $primary-color: #333;
+        
+        
+        // styles.scss
+        @use 'base';
+
+        .inverse {
+            background-color: base.$primary-color;
+            color: white;
+        }
+
+Sass Basic Topics
+-----------------
+a. Sass Variable - use '$variable'  to create a variable
+
+   Example:
+   -------
+    
+    $font:  'Poppins', Helvertica, sans-serif;
+    $color:  #ab99ca;
+    $spacing: 2rem;
+
+    body {
+        font-family: $font;
+        background-color: $color;
+        padding: $spacing;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+b. Sass Function - use @mixin directive
+    Syntax:
+        @mixin function_name { content }            // non param mixins
+        @mixin function_name($param) { content }    // param mixins
+
+    Example:
+        @mixin flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* $radius is the parameter of the function */
+
+        @mixin border-radius($radius) {
+            -webkit-border-radius: $radius;
+            -moz-border-radius: $radius;
+            border-radius: $radius;
+        }
+
+c. Aliases - use '&' to alias some class
+    Syntax:
+        &classname
+
+d. Nesting - allow to nest css selectors
+e. File Imports - use @import keyword
+    Syntax:
+        @import 'filename';   // filename without .scss extension inside main.scss file
+    Example:
+        @import 'variables';
+        @import 'mixins';
+        @import 'card';
