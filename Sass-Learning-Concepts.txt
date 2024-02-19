@@ -150,13 +150,22 @@ d. Sass Nesting - allow to nest css selectors
                 }
             }
         }
-e. Sass Imports - use @import keyword
+e. Sass Modules 
+    - separate file inclusion in a single file as modularity feature
+    - can use mixins or function sass feature
+    - use @import or @use keyword
     Syntax:
-        @import 'filename';   // filename without .scss extension inside main.scss file
+        a. define of imports:
+            @import 'filename';   // filename without .scss extension inside main.scss file
+        b. define of use:
+            @use 'filename'; // filename without .scss extension inside main.scss file'
     Example:
         @import 'variables';
-        @import 'mixins';
-        @import 'card';
+        @use 'mixins';
+        .classname{
+            background-color: mixins.$primary-color;
+            color: $color;
+        }
 
 f. Sass CLI Concepts:
     $ sass -v
