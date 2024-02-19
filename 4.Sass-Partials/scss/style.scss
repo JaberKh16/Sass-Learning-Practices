@@ -1,0 +1,40 @@
+// importing the partials
+@import "variables";
+@import "mixins";
+
+// h2 style
+h2 {
+  color: blue;
+  padding: 2px;
+  margin: 4px;
+  text-decoration: underline;
+  font-weight: 200;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-primary {
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  /* include the mixin */
+  @include btn-primary();
+}
+
+.btn-success {
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  /* include the mixin */
+  @include btn-success(green);
+}
+
+.btn-dark {
+  /* include the mixin */
+  @include btn-success();
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
