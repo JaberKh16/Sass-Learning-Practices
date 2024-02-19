@@ -227,6 +227,8 @@ i. Sass Comment:
 
 j. Sass Operators:
     - supports standard math operators like: +,-,*,math.div()
+    - supports comparsion operators like: ==, >, <, !=
+    - supports logical operators like: and, or
     Syntax:
         @use "sass:math";
         .classname{
@@ -234,3 +236,150 @@ j. Sass Operators:
             margin-left: auto;
         }
 
+k. Sass Conditionals:
+    - supports conditional statements.
+    - has @if and @else directives
+    Syntax:
+        @if condition{
+
+        }
+        @else{
+            
+        }
+    Example-
+        $var = 1;
+        @if $var > 4{
+            background-color: $background-color1;
+        }
+        @else{
+            background-color: $background-color2;
+        }
+
+l. Sass Map & Map Functions:
+    - key/value pair data structure
+    - provides bunch of functions to work with map.
+    Syntax:
+        a. definition:
+            $map_name:(
+                key-1: value,
+                key-2: value,
+            )
+        b. include:
+            tag{
+                color: map-get($map_name, $key)
+            }
+
+    Example:
+        $color_info:(
+            color-1: $background-color1,
+            color-2: $background-color2,
+        )
+        h2{
+            color: map-get($color_info, color-1)
+        }
+
+    Some Functions On Map
+    a. map-get($map_name, $key)         --> get specified $key
+    b. map-has-key($map_name, $key)     --> check if has the specified $key
+    c. map-merge($map1, $map2)          --> merge two maps
+
+m. Sass String & String Functions:
+    - bunch of characters is string
+    Syntax:
+        a. definition
+            $var_name: "Message";
+        b. inclusion
+            tag{
+                content: unquote($var_name); // to pass string as unquote
+            }            
+    Some Functions On String
+    a. unquote($var_name)                       --> return unquote string
+    b. quote($var_name)                         --> return quote string
+    c. str-length($var_name)                    --> return string length
+    d. str-insert($var_name, $value, $index)    --> insert $value at certain $index
+    d. str-index($var_name, $substring)         --> return index value
+    e. to-upper-case($var_name)                 --> return uppercase format
+    e. to-lower-case($var_name)                 --> return lowercase format
+
+m. Sass Lists & Lists Functions:
+    - bunch of values stored in a single variable is list.
+    Syntax:
+        a. definition
+            $list_name: (
+                var_nam1,
+                var_nam2,
+            );
+            @each $iterator_var in $list_name{
+                .#{$iterator_var} // to extract values
+            }
+        b. inclusion
+            @each $iterator_var in $list_name{
+                .#{$iterator_var}{
+                    background: url('../img/#{$iterator_var}.ext')    
+                } // to extract values
+            }
+        
+n. Sass Placeholders:
+    - instead of using common class when extends some properties to another selectors use placeholders
+    - efficient then common class.
+    Syntax:
+        a. definition
+            %classname     // to define placeholder selector
+        b. extending
+            tag{
+                @extend %classname;
+            }
+
+        
+o. Sass Interpolation:
+    - to extract particular value from a variable is interpolation in sass.
+    - dynamic creation of selectors feature.
+    Syntax:
+        a. definition
+            #{$var_name}    // to extract value
+        b, inclusion
+            .classname-#{$var_name}{
+                color: $color;
+            }
+    Example-
+        $sub_name: "msg"
+        $color: #000000;
+        .menu-customer-#{$sub_name}{
+            color: $color;
+        }
+
+        
+o. Sass Loops:
+    - sass supports two types of looping: @for and @while
+    - allows to repeat css code
+    Syntax:
+    a. For Loop:
+        a. definition
+            @for $variable from 1 to 7{
+                .classname-#{$variable}{
+                    property: value;
+                }
+            }
+        Example-
+            @for $variable from 1 to 7{
+                .a-#{$variable}{
+                    height: 50px;
+                    width: (100px * $variable);
+                    background-color: darken(red, 5% * $variable);
+                }
+            }
+    b. While Loop:
+        a. definition
+            @while condition{
+                $variable: $variable + 1;
+            }
+        Example-
+            $variable: 1;
+            @while $variable < 7{
+                .a-#{$variable}{
+                    height: 50px;
+                    width: (100px * $variable);
+                    background-color: darken(red, 5% * $variable);
+                }
+                $variable: $variable + 1;
+            }
