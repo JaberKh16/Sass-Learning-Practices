@@ -125,6 +125,26 @@ c. Aliases - use '&' to alias some class
         &classname
 
 d. Nesting - allow to nest css selectors
+    Syntax:
+        class{
+            class{
+                tag{
+                    tag{
+                        property: value;
+                    }
+                }
+            }
+        }
+    Example:
+        .container{
+            .col-12{
+                ul{
+                    li{
+                        color: black;
+                    }
+                }
+            }
+        }
 e. File Imports - use @import keyword
     Syntax:
         @import 'filename';   // filename without .scss extension inside main.scss file
