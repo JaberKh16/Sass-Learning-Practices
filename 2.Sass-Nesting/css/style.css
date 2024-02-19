@@ -1,0 +1,16 @@
+h2 {
+  color: blue;
+  text-decoration: underline;
+  padding: 2px;
+  margin: 10px;
+}
+
+.content ul li {
+  list-style: none;
+}
+.content ul li a {
+  color: #3c0959;
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=style.css.map */

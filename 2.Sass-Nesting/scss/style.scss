@@ -1,0 +1,23 @@
+$color: blue;
+$list-color: #3c0959;
+$list-style: none;
+
+h2 {
+  color: $color;
+  text-decoration: underline;
+  padding: 2px;
+  margin: 10px;
+}
+
+// nesting of elements
+.content {
+  ul {
+    li {
+      list-style: $list-style;
+      a {
+        color: $list-color;
+        text-decoration: underline;
+      }
+    }
+  }
+}
