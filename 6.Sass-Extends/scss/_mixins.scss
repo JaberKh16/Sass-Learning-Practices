@@ -1,0 +1,15 @@
+// define mixin
+@mixin btn-primary {
+  margin: 10px;
+  color: $color;
+  background-color: $background-color;
+  padding: 12px 15px;
+}
+
+// define mixin
+@mixin btn-success($default-color: #000000) {
+  margin: 10px;
+  color: $color;
+  background-color: $default-color;
+  padding: 12px 15px;
+}
