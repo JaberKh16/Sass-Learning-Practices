@@ -125,11 +125,11 @@ b. Sass Mixins - use @mixin directive
             border-radius: $radius;
         }
 
-c. Aliases - use '&' to alias some class
+c. Sass Aliases - use '&' to alias some class
     Syntax:
         &classname
 
-d. Nesting - allow to nest css selectors
+d. Sass Nesting - allow to nest css selectors
     Syntax:
         class{
             class{
@@ -150,7 +150,7 @@ d. Nesting - allow to nest css selectors
                 }
             }
         }
-e. File Imports - use @import keyword
+e. Sass Imports - use @import keyword
     Syntax:
         @import 'filename';   // filename without .scss extension inside main.scss file
     Example:
@@ -189,7 +189,7 @@ g. Sass Function:
         d. desaturate($var_name, $amount_to_desaturate=null)
         e. rgba($var_name, $alpha_value=null)
 
-h. Sass Extends
+h. Sass Extends:
     - provides the functionality of inherting/sharing parent selectot properties to child selectors.
     - supported feature is DRY
     Syntax:
@@ -211,8 +211,17 @@ h. Sass Extends
                 }
             }
 
-i. Sass Comment
+i. Sass Comment:
     - single line comments: //
     - multiple line comments: /* */
     - note: multi-line comment gets included after compiled
+
+j. Sass Operators:
+    - supports standard math operators like: +,-,*,math.div()
+    Syntax:
+        @use "sass:math";
+        .classname{
+            width: math.div(400px, 100px) * 100%;
+            margin-left: auto;
+        }
 
