@@ -100,11 +100,16 @@ a. Sass Variable - use '$variable'  to create a variable
         justify-content: center;
     }
 
-b. Sass Function - use @mixin directive
+b. Sass Mixins - use @mixin directive
     Syntax:
-        @mixin function_name { content }            // non param mixins
-        @mixin function_name($param) { content }    // param mixins
-
+    a. defini mixins:
+        @mixin mixin_name {}
+        @mixin mixin_name { content }                   // non param mixins
+        @mixin mixin_name($param:value) { content }    // param mixins
+    b. include mixins:
+        tag{
+            @include mixin_name();
+        }
     Example:
         @mixin flex-center {
             display: flex;
@@ -152,3 +157,62 @@ e. File Imports - use @import keyword
         @import 'variables';
         @import 'mixins';
         @import 'card';
+
+f. Sass CLI Concepts:
+    $ sass -v
+    $ sass -help
+    $ sass -i       // to enter into sass cli
+    >> 10 + 1
+    >> 10px + 4rem
+    >> 10px+20px
+
+g. Sass Function:
+    - similar like mixins difference is that it can only return a single result thus can not
+    have bunch of code replacement like Mixins.
+    - types of functions sass provides:
+        a. In-Built Functions 
+        b. Custom Function
+
+    Syntax Of Custom Function:
+        a. definition:
+            @function function_name(){ @return }                // non param function
+            @function function_name($var){ @return ($var) }    // param function
+        b. include function:
+            tag{
+                width: function_name(15px);
+            }
+    
+    Some Built-in Functions:
+        a. darken($var_name, $amount_to_darken=null)
+        b. lighten($var_name, $amount_to_lighten=null)
+        c. saturate($var_name, $amount_to_saturate=null)
+        d. desaturate($var_name, $amount_to_desaturate=null)
+        e. rgba($var_name, $alpha_value=null)
+
+h. Sass Extends
+    - provides the functionality of inherting/sharing parent selectot properties to child selectors.
+    - supported feature is DRY
+    Syntax:
+        a. definition:
+            .classname{
+                background-color:blue;
+                height:100px;
+            }
+        b include with @extend
+            .classname{
+                width: 100%;
+                .leftCol{
+                    float:left;
+                    @extend .classname;
+                }
+                .rightCol{
+                    float:right;
+                    @extend .classname;
+                }
+            }
+
+i. Sass Comment
+    - single line comments: //
+    - multiple line comments: /* */
+    - note: multi-line comment gets included after compiled
+
