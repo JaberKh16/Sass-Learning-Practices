@@ -282,6 +282,9 @@ l. Sass Map & Map Functions:
     a. map-get($map_name, $key)         --> get specified $key
     b. map-has-key($map_name, $key)     --> check if has the specified $key
     c. map-merge($map1, $map2)          --> merge two maps
+    d. map-keys($map)                   --> return $keys
+    e. map-values($map)                 --> return values
+    f. map-removes($key)                --> return specified $key
 
 m. Sass String & String Functions:
     - bunch of characters is string
