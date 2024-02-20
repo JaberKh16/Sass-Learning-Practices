@@ -1,0 +1,18 @@
+// Define the number of anchor tags you want inside the list
+$totalItems: 5;
+
+// Create a list
+$listSelector: ".my-list";
+$anchorSelector: ".my-list-item";
+
+// Loop to generate the anchor tags
+@for $i from 1 through $totalItems {
+  #{$listSelector} {
+    #{$anchorSelector}:nth-child(#{$i}) {
+      // Your styles for each anchor tag
+      color: blue;
+      list-style: lower-alpha;
+      text-decoration: none;
+    }
+  }
+}
