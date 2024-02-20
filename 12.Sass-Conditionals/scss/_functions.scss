@@ -1,0 +1,6 @@
+// function to calculate width
+@use "sass:math";
+
+@function calculate_width($value) {
+  @return math.div(($value + 500px), 2);
+}

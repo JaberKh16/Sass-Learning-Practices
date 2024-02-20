@@ -1,0 +1,26 @@
+// importing the partials
+@import "variables";
+@import "map";
+@import "mixins";
+@import "functions";
+
+// h2 style
+h2 {
+  padding: 4px 10px;
+  margin: 4px;
+  text-decoration: underline;
+  font-weight: 200;
+  height: 50px;
+  width: 200px;
+  @if ($font-family and $background-color or $color or $border) {
+    font-family: $font-family;
+    background-color: $background-color;
+    color: $color;
+    border: $border;
+  } @else {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: black;
+    background-color: blue;
+    border: 1px solid blue;
+  }
+}
