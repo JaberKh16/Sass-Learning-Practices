@@ -1,0 +1,43 @@
+// importing the partials
+@import "variables";
+@import "mixins";
+@import "functions";
+
+// h2 style
+h2 {
+  color: blue;
+  padding: 2px;
+  margin: 4px;
+  text-decoration: underline;
+  font-weight: 200;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* placeholder selector - prefix with '%' */
+%container {
+  color: $color;
+  font-family: $font-family;
+  border: $border;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.left-col {
+  float: left;
+  background-color: blue;
+  width: calculate_width(100px);
+  height: 100px;
+  /* extend %container */
+  @extend %container;
+}
+
+.right-col {
+  float: right;
+  background-color: brown;
+  width: calculate_width(100px);
+  height: 100px;
+  /* extend %container */
+  @extend %container;
+}
