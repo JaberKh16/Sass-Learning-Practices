@@ -1,17 +1,32 @@
-/* Error: Undefined variable.
- *   ,
- * 1 | /* example of interpolation - #{$variable} *∕
- *   |                                 ^^^^^^^^^
- *   '
- *   scss/style.scss 1:33  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 1 \2502  /* example of interpolation - #{$variable} */\a   \2502                                  ^^^^^^^^^\a   \2575 \a   scss/style.scss 1:33  root stylesheet";
+/* example of interpolation -  variable */
+.my-list .my-list-item:nth-child(1) {
+  color: blue;
+  list-style: lower-alpha;
+  text-decoration: none;
 }
+
+.my-list .my-list-item:nth-child(2) {
+  color: blue;
+  list-style: lower-alpha;
+  text-decoration: none;
+}
+
+.my-list .my-list-item:nth-child(3) {
+  color: blue;
+  list-style: lower-alpha;
+  text-decoration: none;
+}
+
+.my-list .my-list-item:nth-child(4) {
+  color: blue;
+  list-style: lower-alpha;
+  text-decoration: none;
+}
+
+.my-list .my-list-item:nth-child(5) {
+  color: blue;
+  list-style: lower-alpha;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
