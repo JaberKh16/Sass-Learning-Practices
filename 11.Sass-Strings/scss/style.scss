@@ -1,0 +1,21 @@
+@function toUpperCase($msg) {
+  @return to-upper-case($msg);
+}
+
+$txt-message: toUpperCase("change text");
+
+h2 {
+  color: blue;
+  padding: 2px;
+  margin: 4px;
+  text-decoration: underline;
+  font-weight: 200;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-msg {
+  color: blue;
+  &:before {
+    content: $txt-message;
+  }
+}

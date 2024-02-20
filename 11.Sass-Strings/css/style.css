@@ -1,0 +1,17 @@
+h2 {
+  color: blue;
+  padding: 2px;
+  margin: 4px;
+  text-decoration: underline;
+  font-weight: 200;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-msg {
+  color: blue;
+}
+.text-msg:before {
+  content: "CHANGE TEXT";
+}
+
+/*# sourceMappingURL=style.css.map */
