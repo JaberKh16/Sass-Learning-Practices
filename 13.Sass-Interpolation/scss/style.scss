@@ -1,0 +1,15 @@
+$totalItems: 5;
+$listSelector: ".my-list";
+$anchorSelector: ".my-list-item";
+
+// for loop
+@for $i from 1 through $totalItems {
+  #{$listSelector} {
+    #{$anchorSelector}:nth-child(#{$i}) {
+      // Your styles for each anchor tag
+      color: blue;
+      list-style: lower-alpha;
+      text-decoration: none;
+    }
+  }
+}
