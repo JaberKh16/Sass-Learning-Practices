@@ -1,0 +1,21 @@
+.container ul li.Home::before {
+  content: Home;
+}
+
+.container ul li.About::before {
+  content: About;
+}
+
+.container ul li.Services::before {
+  content: Services;
+}
+
+.container ul li.Sign-in::before {
+  content: Sign-in;
+}
+
+.container ul li.Log-out::before {
+  content: Log-out;
+}
+
+/*# sourceMappingURL=style.css.map */

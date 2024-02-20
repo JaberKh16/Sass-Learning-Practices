@@ -1,0 +1,8 @@
+// define list
+$list_items: (Home, About, Services, Sign-in, Log-out);
+
+@each $list in $list_items {
+  .container ul li.#{$list}::before {
+    content: #{$list};
+  }
+}
